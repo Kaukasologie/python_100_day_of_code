@@ -1,7 +1,7 @@
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z']
 
-
+# TODO A condition is needed to check whether "encode" is written, otherwise even if you write decode with a typo or any other word, it will encode
 def caesar(original_text, shift_amount, encode_or_decode):
     output_text = ""
     if encode_or_decode == "decode":
