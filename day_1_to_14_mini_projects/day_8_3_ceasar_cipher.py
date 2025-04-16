@@ -1,24 +1,27 @@
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z']
 
-# TODO A condition is needed to check whether "encode" is written, otherwise even if you write decode with a typo or any other word, it will encode
 def caesar(original_text, shift_amount, encode_or_decode):
     output_text = ""
-    if encode_or_decode == "decode":
-        shift_amount *= -1
 
-    for letter in original_text:
+    if encode_or_decode == "encode" or encode_or_decode == "decode":
+        if encode_or_decode == "decode":
+            shift_amount *= -1
 
-        if letter not in alphabet:
-            output_text += letter
-        else:
-            shifted_position = alphabet.index(letter) + shift_amount
-            # Prevent "list out of range" error
-            # !- The modulus returns the number itself if it is not evenly divisible by at least one -!
-            shifted_position %= len(alphabet)
-            output_text += alphabet[shifted_position]
-    print(f"Here is the {encode_or_decode}d result:\n{output_text}")
+        for letter in original_text:
+            if letter not in alphabet:
+                output_text += letter
+            else:
+                shifted_position = alphabet.index(letter) + shift_amount
+                # Prevent "list out of range" error
+                # !- The modulus returns the number itself if it is not evenly divisible by at least one -!
+                shifted_position %= len(alphabet)
+                output_text += alphabet[shifted_position]
 
+        print(f"Here is the {encode_or_decode}d result:\n{output_text}")
+
+    else:
+        print('\nIncorrect process entered. I can only "encode" or "decode"')
 
 should_continue = True
 
