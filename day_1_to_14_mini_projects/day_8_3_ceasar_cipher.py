@@ -34,6 +34,9 @@ while should_continue:
     caesar(original_text=text, shift_amount=shift, encode_or_decode=direction)
 
     restart = input("\nType 'yes' if you want to go again. Otherwise, type 'no'.\n--->> ").lower()
-    if restart == "no":
+
+    if restart == "yes":
+        pass
+    else:
         should_continue = False
         print("Goodbye")
