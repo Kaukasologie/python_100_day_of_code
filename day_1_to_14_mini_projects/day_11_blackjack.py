@@ -1,15 +1,9 @@
-# I didn't know about the condition with aces until this happened in a game on the website:
-# At first I had an ace (11 points) and a deuce (2 points). I got an ace (11 points).
-# The total should have been 24 points (11+2+11), but it became 14 points, since one of the aces turned into 1.
-# Then I got another eight (8 points) and the total should have been 22 (11+2+1+8), but now the second ace became 1
-# and the score became 12 points (1+2+1+8).
-
-# TODO: Add conditions for ace
+# Test: start hand - [11, 2](13) add ace[1](14) and add 8 = 12 [1, 2, 1, 8]
 
 import random
 
 
-print(r"""
+logo = (r"""
 .------.            _     _            _    _            _    
 |A_  _ |.          | |   | |          | |  (_)          | |   
 |( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
@@ -19,54 +13,72 @@ print(r"""
       |  \/ K|                            _/ |                
       `------'                           |__/           
 """)
+print(logo)
 
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+def add_card_to_list(hand):
+    """Take a list of cards and return the new list with added card"""
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    card = random.choice(cards)
+    if sum(hand) + card > 21:
+        if card == 11:
+            card = 1
+        else:
+            for i in range(len(hand)): # option - if 11 in hand: hand.remove(11), hand.append(1) - but order will wrong
+                if hand[i] == 11:
+                    hand[i] = 1
+    hand.append(card)
+    return hand
 
-def pick_card():
-    return random.choice(cards)
-
-
-quit_game = False
-
-while not quit_game:
-    if input("\n\nDo you want to play a game of Blackjack? Type 'y' or 'n': ").lower() != 'y':
-        quit_game = True
+def blackjack_check(hand):
+    if sum(hand) == 21 and len(hand) == 2:
+        return True
     else:
-        your_hand = [pick_card(), pick_card()]
-        computer_hand = [pick_card()]
-        game_over = False
-        blackjack = False
+        return False
 
-        if sum(your_hand) == 21:
-            blackjack = True
+def play_game():
+    user_hand = []
+    computer_hand = []
+    for _ in range(2):
+        add_card_to_list(user_hand)
+        add_card_to_list(computer_hand)
+
+    game_over = False
+
+    while not game_over:
+        print(f"\nYour cards: {user_hand}, current score: {sum(user_hand)}")
+        print(f"Computer's first card: {computer_hand[0]}")
+        if blackjack_check(computer_hand):
+            game_over = True
+        elif blackjack_check(user_hand):
+            game_over = True
+        elif sum(user_hand) > 21:
+            game_over = True
+        elif input("\nType 'y' to get another card, type 'n' to pass: ").lower() == "y":
+            add_card_to_list(user_hand)
         else:
-            while not game_over:
-                print(f"\nYour cards: {your_hand}, current score: {sum(your_hand)}")
-                print(f"Computer's first card: {computer_hand}")
-                if sum(your_hand) > 21:
-                    game_over = True
-                elif input("\nType 'y' to get another card, type 'n' to pass: ").lower() == "y":
-                    your_hand.append(pick_card())
-                else:
-                    game_over = True
-                    while sum(computer_hand) < 17:
-                        computer_hand.append(pick_card())
+            game_over = True
+            while sum(computer_hand) < 17:
+                add_card_to_list(computer_hand)
 
-        print(f"\nYour final hand: {your_hand}, final score: {sum(your_hand)}")
-        print(f"Computer's final hand: {computer_hand}, final score: {sum(computer_hand)}\n")
+    print(f"\nYour final hand: {user_hand}, final score: {sum(user_hand)}")
+    print(f"Computer's final hand: {computer_hand}, final score: {sum(computer_hand)}\n")
 
-        if blackjack:
-            print("Win with a Blackjack 😎")
-        elif sum(your_hand) > 21:
-            print("You went over. You lose 😭")
-        elif sum(your_hand) < sum(computer_hand):
-            if sum(computer_hand) > 21:
-                print("Opponent went over. You win 😁")
-            elif sum(computer_hand) == 21 and len(computer_hand) == 2:
-                print("Lose, opponent has Blackjack 😱")
-            else:
-                print("You lose 😤")
-        elif sum(your_hand) > sum(computer_hand):
-            print("You win 😃")
-        else:
-            print("Draw 🙃")
+    if blackjack_check(computer_hand):
+        print("Lose, opponent has Blackjack 😱")
+    elif blackjack_check(user_hand):
+        print("Win with a Blackjack 😎")
+    elif sum(user_hand) > 21:
+        print("You went over. You lose 😭")
+    elif sum(computer_hand) > 21:
+        print("Opponent went over. You win 😁")
+    elif sum(user_hand) == sum(computer_hand):
+        print("Draw 🙃")
+    elif sum(user_hand) > sum(computer_hand):
+        print("You win 😃")
+    else:
+        print("You lose 😤")
+
+while input("\n\nDo you want to play a game of Blackjack? Type 'y' or 'n': ").lower() == 'y':
+    print("\n" * 3)
+    print(logo)
+    play_game()
