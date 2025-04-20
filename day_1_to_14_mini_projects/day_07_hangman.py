@@ -1,5 +1,5 @@
 import random
-from day_7_hangman_art_and_words import logo, stages, word_list
+from day_07_hangman_art_and_words import logo, stages, word_list
 
 print(logo)
 
