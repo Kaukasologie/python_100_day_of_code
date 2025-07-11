@@ -11,7 +11,7 @@
 |  5  |                  For Loops, Range and Code Blocks                  | [Password Generator](https://git.new/pass_generator)           |
 |  6  |               Functions, Code Blocks and While Loops               | [Reeborg's_World (Online)](https://git.new/reeborgs_world)     |
 |  7  |                            Game Project                            | [Hangman](https://git.new/hangman)                             |
-|  8  |                       Functions with Inputs                        | [Ceasar Cipher](https://git.new/ceasar_cipher)                 |
+|  8  |                       Functions with Inputs                        | [Caesar Cipher](https://git.new/ceasar_cipher)                 |
 |  9  |                      Dictionaries and Nesting                      | [Secret Auction](https://git.new/secret_auction)               |
 | 10  |                       Functions with Outputs                       | [The Calculator](https://git.new/the_calculator)               |
 | 11  |                          Capstone Project                          | [The Blackjack](https://git.new/blackjack)                     |
