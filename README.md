@@ -17,4 +17,22 @@
 | 11  |                          Capstone Project                          | [The Blackjack](https://git.new/blackjack)                     |
 | 12  |                      Local and Global Scopes                       | [Number Guessing Game](https://git.new/number_guessing)        |
 | 13  |                             Debugging                              | [Debugging and Exceptions](https://git.new/debugging)          |
-| 14  |                            Game Project                            | []()                                                           |
+| 14  |                            Game Project                            | [Higher Lower Game](https://git.new/higher_lower_game)         |
+| 15  |                Local Development Environment Setup                 | [The Coffee Machine](https://git.new/coffee_machine)           |
+| 16  |                 Object Oriented Programming (OOP)                  | []()                                                           |
+| 17  |                          Benefits of OOP                           | []()                                                           |
+| 18  |          Turtle Module and Graphical User Interface (GUI)          | []()                                                           |
+| 19  |            Instances, State and Higher Order Functions             | []()                                                           |
+| 20  |           The Snake Game Part 1: Animation & Coordinates           | []()                                                           |
+| 21  |         The Snake Game Part 2: Inheritance & List Slicing          | []()                                                           |
+| 22  |                    Pong: The Famous Arcade Game                    | []()                                                           |
+| 23  |                          Capstone Project                          | []()                                                           |
+| 24  |                    Files, Directories and Paths                    | []()                                                           |
+| 25  |            Working with CSV Data and the Pandas Library            | []()                                                           |
+| 26  |                         List Comprehension                         | []()                                                           |
+| 27  |                 Tkinter Module, *args and **kwargs                 | []()                                                           |
+| 28  |                 Tkinter Module and Dynamic Typing                  | []()                                                           |
+| 29  |               Password Manager GUI App with Tkinter                | []()                                                           |
+| 30  |                  Errors, Exceptions and JSON Data                  | []()                                                           |
+| 31  |                          Capstone Project                          | []()                                                           |
+| 32  |                                                                    | []()                                                           |
