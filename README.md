@@ -19,7 +19,7 @@
 | 13  |                             Debugging                              | [Debugging and Exceptions](https://git.new/debugging)          |
 | 14  |                            Game Project                            | [Higher Lower Game](https://git.new/higher_lower_game)         |
 | 15  |                Local Development Environment Setup                 | [The Coffee Machine](https://git.new/coffee_machine)           |
-| 16  |                 Object Oriented Programming (OOP)                  | []()                                                           |
+| 16  |                 Object Oriented Programming (OOP)                  | [The Coffee Machine on OOP](https://git.new/OOP_coffee_machin) |
 | 17  |                          Benefits of OOP                           | []()                                                           |
 | 18  |          Turtle Module and Graphical User Interface (GUI)          | []()                                                           |
 | 19  |            Instances, State and Higher Order Functions             | []()                                                           |
