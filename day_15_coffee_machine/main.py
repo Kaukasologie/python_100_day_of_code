@@ -30,7 +30,7 @@ def is_resource_sufficient(order_ingredients):
 
 def coin_counting():
     """Returns the total calculated from coins inserted."""
-    print("Please insert coins.")
+    print("\nPlease insert coins.")
     total = int(input("how many quarters?: ")) * 0.25
     total += int(input("how many dimes?: ")) * 0.1
     total += int(input("how many nickles?: ")) * 0.05
@@ -44,7 +44,7 @@ def is_transaction_successful(money_received, drink_cost):
         return False
     else:
         change = round(money_received - drink_cost, 2)
-        print(f"Here is ${change} in change.")
+        print(f"\nHere is ${change} in change.")
         global bank
         bank += drink_cost
         return True
@@ -59,7 +59,7 @@ def make_coffee(drink_name, order_ingredients):
 is_on = True
 
 while is_on:
-    choice = input("What would you like? (espresso/latte/cappuccino): ").lower()
+    choice = input("\nWhat would you like? (espresso/latte/cappuccino): ").lower()
     if choice == "off":
         print("Coffee machine is off. Bye!")
         is_on = False
