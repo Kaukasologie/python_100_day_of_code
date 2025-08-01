@@ -4,9 +4,9 @@ from extract_colors_from_picture import rgb_colors
 
 
 RADIUS = 10
-SPACED = 50
-side = 10 * ((2 * RADIUS) + SPACED)     # 10 * (20 + 50) = 700
-distance = SPACED + (2 * RADIUS)        # 50 + 20 = 70
+SPACED = 40
+distance = SPACED + (2 * RADIUS)        # 40 + 20 = 60
+side = distance * 10                    # 60 * 10 = 600
 
 timmy = Turtle()
 screen = Screen()
@@ -14,7 +14,7 @@ screen = Screen()
 timmy.shape("arrow")
 timmy.speed("fastest")
 screen.colormode(255)
-screen.screensize(side, side)   # 700 x 700
+screen.screensize(side, side)   # 600 x 600
 
 
 def draw_circle(color):
@@ -26,8 +26,8 @@ def draw_circle(color):
     timmy.penup()
 
 
-start_x = -1 * (side // 2) + (SPACED // 2) + RADIUS     # -350 + 25 + 10 = -315
-start_y = -1 * (side // 2) + (SPACED // 2)              # -350 + 25 = - 325
+start_x = -1 * (side // 2) + (SPACED // 2) + RADIUS     # -300 + 20 + 10 = -270
+start_y = -1 * (side // 2) + (SPACED // 2)              # -300 + 20 = -280
 prev_color = (0, 0, 0)
 
 for y in range(10):
