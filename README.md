@@ -31,10 +31,10 @@
 | 25  |            Working with CSV Data and the Pandas Library            | [U.S. States Game](https://git.new/us_states_game)               |
 | 26  |                         List Comprehension                         | [NATO Phonetic Alphabet](https://git.new/nato_alphabet)          |
 | 27  |                 Tkinter Module, *args and **kwargs                 | [Miles to Kilometers](https://git.new/miles_to_kilometers)       |
-| 28  |                 Tkinter Module and Dynamic Typing                  | []()                                                             |
-| 29  |               Password Manager GUI App with Tkinter                | []()                                                             |
+| 28  |                 Tkinter Module and Dynamic Typing                  | [Pomodoro GUI Application](https://git.new/tkinter_pomodoro)     |
+| 29  |               Password Manager GUI App with Tkinter                | [Password Manager](https://git.new/password_manager)             |
 | 30  |                  Errors, Exceptions and JSON Data                  | []()                                                             |
-| 31  |                          Capstone Project                          | []()                                                             |
+| 31  |                          Capstone Project                          | [Flash Card App](https://git.new/flash_card_app)                 |
 | 32  |           Send Email (smtplib) & Manage Dates (datetime)           | []()                                                             |
 | 33  |       API Endpoints & API Parameters - ISS Overhead Notifier       | []()                                                             |
 | 34  |               API Practice - Creating a GUI Quiz App               | []()                                                             |
