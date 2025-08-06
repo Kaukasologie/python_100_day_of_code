@@ -44,10 +44,10 @@
 | 38  |                Workout Tracking Using Google Sheets                | []()                                                             |
 | 39  |                      Capstone Project: Part 1                      | []()                                                             |
 | 40  |                      Capstone Project: Part 2                      | []()                                                             |
-| 41  |                        Introduction to HTML                        | []()                                                             |
-| 42  |                         Intermediate HTML                          | []()                                                             |
-| 43  |                        Introduction to CSS                         | []()                                                             |
-| 44  |                          Intermediate CSS                          | []()                                                             |
+| 41  |                        Introduction to HTML                        | [Web Development Projects](https://git.new/web_development)      |
+| 42  |                         Intermediate HTML                          | [Web Development Projects](https://git.new/web_development)      |
+| 43  |                        Introduction to CSS                         | [Web Development Projects](https://git.new/web_development)      |
+| 44  |                          Intermediate CSS                          | [Web Development Projects](https://git.new/web_development)      |
 | 45  |                  Web Scraping with Beautiful Soup                  | []()                                                             |
 | 46  |      Create a Spotify Playlist using the Musical Time Machine      | []()                                                             |
 | 47  |              Create an Automated Amazon Price Tracker              | []()                                                             |
