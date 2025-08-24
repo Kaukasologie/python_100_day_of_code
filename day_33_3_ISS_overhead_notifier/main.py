@@ -26,8 +26,8 @@ def check_iss():
     data = response.json()
     iss_latitude = float(data["iss_position"]["latitude"])
     iss_longitude = float(data["iss_position"]["longitude"])
-    print(f"ISS:\nLatitude: {iss_latitude}\nLongitude is:{iss_longitude}\n")
-    print(f"Your:\nLatitude: {MY_LATITUDE}\nLongitude is:{MY_LONGITUDE}\n")
+    print(f"ISS:\nLatitude: {iss_latitude}\nLongitude is: {iss_longitude}\n")
+    print(f"Your:\nLatitude: {MY_LATITUDE}\nLongitude is: {MY_LONGITUDE}\n")
 
 
     # Find out the sunrise and sunset times in your area
