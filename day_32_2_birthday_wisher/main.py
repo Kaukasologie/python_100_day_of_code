@@ -1,21 +1,17 @@
-##################### Extra Hard Starting Project ######################
-
 import csv
 import smtplib
-import datetime as dt
+from datetime import datetime
 from random import randint
 
 MY_EMAIL = "your_mail@gmail.com"
 MY_PASSWORD = "your_password"
-
 
 def send_email(name, email):
     """Selects one of three letters, inserts the value into the [NAME] field
     and sends it from my email to the birthday person's email."""
 
     # Preparing a letter
-    letter_number = randint(1, 3)
-    with open(f"letter_templates/letter_{letter_number}.txt") as file:
+    with open(f"letter_templates/letter_{randint(1, 3)}.txt") as file:
         letter = file.read()
         letter = letter.replace("[NAME]", name)
 
@@ -30,18 +26,20 @@ def send_email(name, email):
         )
 
 
-
-now = dt.datetime.now()
-present_month = now.month
-present_day = now.day
+today = (datetime.now().month, datetime.now().day)
 
 with open("birthdays.csv") as data_file:
     data = csv.reader(data_file)
     for row in data:
         if row[3] != "month" and row[4] != "day":
-            birthday_month = int(row[3])
-            birthday_day = int(row[4])
-            if present_month == birthday_month and present_day == birthday_day:
+            birthday = (int(row[3]), int(row[4]))
+            if today == birthday:
                 birthday_person = row[0]
                 birthday_email = row[1]
                 send_email(birthday_person, birthday_email)
+
+
+# # Solution with pandas
+# data = pandas.read_csv("birthdays.csv")
+# birthdays_dict = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}
+# if today in birthdays_dict: ...
