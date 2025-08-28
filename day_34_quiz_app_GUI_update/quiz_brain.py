@@ -19,7 +19,7 @@ class QuizBrain:
         self.question_number += 1
         q_category = html.unescape(self.current_question.category)
         q_text = html.unescape(self.current_question.text)
-        return f"Q.{self.question_number} [{q_category}]:\n{q_text}"
+        return q_text, q_category
 
 
     def check_answer(self, user_answer):

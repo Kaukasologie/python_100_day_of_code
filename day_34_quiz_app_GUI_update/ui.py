@@ -15,17 +15,27 @@ class QuizInterface:
 
         self.score_label = Label(self.window, text="Score: 0", foreground="white", background=THEME_COLOR, font=("Arial", 12, "bold"))
         self.score_label.grid(row=0, column=1)
+        self.canvas = Canvas(self.window, width=500, height=300, background="white")
 
-        self.canvas = Canvas(self.window, width=300, height=250, background="white")
         self.question_text = self.canvas.create_text(
+            250,
             150,
-            125,
-            width= 280,
-            text="Some Question Text",
+            width= 480,
+            justify="left",
             fill=THEME_COLOR,
             font=("Arial", 18, "italic")
         )
         self.canvas.grid(row=1, column=0, columnspan=2, pady=30)
+
+        self.title_text = self.canvas.create_text(
+            250,
+            50,
+            width=480,
+            justify="center",
+            fill=THEME_COLOR,
+            font=("Arial", 18, "bold")
+        )
+
 
         true_image = PhotoImage(file="images/true.png")
         self.true_button = Button(self.window, image=true_image, highlightthickness=0, command=self.answer_true)
@@ -42,13 +52,17 @@ class QuizInterface:
 
     def get_next_question(self):
         self.canvas.configure(background="white")
+        self.score_label.configure(text=f"Score: {self.quiz.score}")
+        self.true_button.configure(state="active")
+        self.false_button.configure(state="active")
 
         if self.quiz.still_has_questions():
-            self.score_label.configure(text=f"Score: {self.quiz.score}")
-            q_text = self.quiz.next_question()
+            q_text, q_category = self.quiz.next_question()
             self.canvas.itemconfigure(self.question_text, text=q_text)
+            self.canvas.itemconfigure(self.title_text, text=f"Question: {self.quiz.question_number} from {len(self.quiz.question_list)}.\n"
+                                                               f"Category: '{q_category}'.")
         else:
-            self.canvas.itemconfigure(self.question_text, text=f"You've completed the quiz.\nYour final score: {self.quiz.score}/{self.quiz.question_number}")
+            self.canvas.itemconfigure(self.question_text, text=f"You've completed the quiz.\n\nYour scored {self.quiz.score} points out of {self.quiz.question_number} possible.")
             self.true_button.configure(state="disabled")
             self.false_button.configure(state="disabled")
 
@@ -67,6 +81,7 @@ class QuizInterface:
             self.canvas.configure(background="green")
         else:
             self.canvas.configure(background="red")
-
+        self.true_button.configure(state="disabled")
+        self.false_button.configure(state="disabled")
         self.window.after(1000, self.get_next_question)
 
